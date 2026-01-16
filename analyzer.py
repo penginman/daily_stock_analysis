@@ -450,7 +450,7 @@ class GeminiAnalyzer:
         
         try:
             # base_url 可选，不填则使用 OpenAI 官方默认地址
-            client_kwargs = {"api_key": config.openai_api_key}
+            client_kwargs = {"api_key": config.openai_api_key,"default_headers": {"User-Agent": "Zed/0.211.6 (macos; x86_64)"}}
             if config.openai_base_url and config.openai_base_url.startswith('http'):
                 client_kwargs["base_url"] = config.openai_base_url
             
